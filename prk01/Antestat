@@ -1,0 +1,34 @@
+Antestat
+
+1.)
+	-ls:	Auflistung von Dateinen in einem Verzeichniss
+	-cd:	Wechsel des Arbeitsverzeichniss
+	-rm:	Entfernt eine oder mehrere Dateien (mit -f auch verzeichnisse die nicht leer sind
+	-mkdir:	Legt ein Verzeichniss an
+	-mv:	Verschieben von Datein/Verzeichnisse an einen anderen ort (Umbennen ebenfalls möglich
+	-chmod:	Ändern der Rechte einer Datei, Verzeichniss
+
+2.)
+	Die Shell sucht im PATH, nach Datein bei denen das Ausführunges bit gesetzt ist wenn ein Befehl eingegeben wurde. Es wird die File genommen die zuerst gefunden wird.
+	mit export PATH="$PATH:/home/test/bin"
+
+3.)
+	-echo $PATH
+	-mit export kann man Umgebungsvariablen setzten
+	-am besten in die bashrc oder in die bash_login
+
+4.)
+	man startet eine shell und gibt dort den befehl "man Befehl" ein und bekommt hilfe zu dem übergeben befehls-namen
+
+5.)
+	In dem man ein "&" hinter den befehl schreibt
+
+6.)
+	-Mit CREATE TABLE
+	-INSERT INTO produkt (pnr, name) SELECT a, b FROM other_table;
+
+7.)
+	-\q	Beendet psql
+	-\d	Zeigt eine Liste aller Tables
+	-\i	Führt die SQL-Befehle aus einer Text-Datei aus.
+
