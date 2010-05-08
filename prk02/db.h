@@ -10,6 +10,9 @@
 #ifndef DB_H
 #define DB_H
 
+/*Datenbank erstellen*/
+void db_create();
+
 /*Datenbank-Login*/
 /* rc: 0 = ok, 1 = error */
 int db_login(char* user, char* password, char* host, char* dbname);
