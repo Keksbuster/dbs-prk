@@ -22,11 +22,11 @@ void print_usage() {
 int main(int argc, char** argv)
 {
     int del = 0;
-    char dbuser[50];
-    char dbhost[50];
-    char dbpass[50];
-    char dbname[50];
-    char filename[50];
+    char dbuser[50]="";
+    char dbhost[50]="";
+    char dbpass[50]="";
+    char dbname[50]="";
+    char filename[50]="";
     if(argc <= 1){
         print_usage();
     } else if(argc == 2) {
