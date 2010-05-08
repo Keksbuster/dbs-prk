@@ -33,10 +33,10 @@ int db_begin(){
     res = PQexec(conn, "BEGIN TRANSACTION");
     
     if (PQresultStatus(res) == PGRES_COMMAND_OK) {
-        PGclear(res);
+        PQclear(res);
         return 0;
     }
-    PGclear(res);
+    PQclear(res);
     return 1;
 }
 
@@ -46,10 +46,10 @@ int db_commit(){
     res = PQexec(conn, "COMMIT");
     
     if (PQresultStatus(res) == PGRES_COMMAND_OK) {
-        PGclear(res);
+        PQclear(res);
         return 0;
     }
-    PGclear(res);
+    PQclear(res);
     return 1;
 }
 
@@ -59,10 +59,10 @@ int db_rollback(){
     res = PQexec(conn, "ROLLBACK");
     
     if (PQresultStatus(res) == PGRES_COMMAND_OK) {
-        PGclear(res);
+        PQclear(res);
         return 0;
     }
-    PGclear(res);
+    PQclear(res);
     return 1;
 }
 
@@ -77,7 +77,7 @@ int db_checkmtnr(char* mtnr){
     if (PQresultStatus(res) == PGRES_TUPLES_OK) {
         for(i = 0; i < PQntuples(res); i++) {
             if(PQgetvalue(res, i, 0) == mtnr){
-                PGclear(res);
+                PQclear(res);
                 return 1;
             }
         }
@@ -85,7 +85,7 @@ int db_checkmtnr(char* mtnr){
         return 0;
     }
     else {
-        PGclear(res);
+        PQclear(res);
         return -1;
     }
 }    
@@ -96,15 +96,15 @@ int db_insert(char* mtnr, char* vorname, char* nachname, char* geburt){
     PGresult *res;
     char buffer[100];
     
-    sprintf(buffer, "INSERT INTO student (mtnr, vorname, nachname, geburt) VALUES (%s, %s, %s, %s)", mtnr, vorname, nachname, geburt)
+    sprintf(buffer, "INSERT INTO student (mtnr, vorname, nachname, geburt) VALUES (%s, %s, %s, %s)", mtnr, vorname, nachname, geburt);
     
     res = PQexec(conn, buffer);
     
     if (PQresultStatus(res) == PGRES_COMMAND_OK) {
-        PGclear(res);
+        PQclear(res);
         return 0;
     }
-    PGclear(res);
+    PQclear(res);
     return 1;
 }
 
@@ -116,9 +116,9 @@ int db_delete(){
     res = PQexec(conn, "DELETE * FROM student");
     
     if (PQresultStatus(res) == PGRES_COMMAND_OK) {
-        PGclear(res);
+        PQclear(res);
         return 0;
     }
-    PGclear(res);
+    PQclear(res);
     return 1;
 }    
